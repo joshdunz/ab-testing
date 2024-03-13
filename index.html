@@ -1,0 +1,149 @@
+<!doctype html>
+<html>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&display=swap">
+    
+<head>
+    <title>Joshua Lim's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="abtest_design.css" />
+    <h1>Welcome to my Portfolio</h1>
+</head>
+
+<body>
+    <div class="project">
+    
+    
+        <div class="project-header" id="responsive-redesign-header">
+            <h2 class="project-name"> A/B Testing Appointment Booking Website</h2>
+            <h3 class="language">Excel/CSS | March 2024</h3>
+        </div>
+
+        <div class="project-body">
+            <h2>1. About </h2>
+            <h4>The task of the project was to conduct A/B Test on a given webpage and another webpage with suggested improvements :</h4>
+                <ul>
+                    <li>I sought to prove that my editted page with higher contrast increased accuracy and cut down time spent on the booking site</li>
+                    <li>The testing helped me determine whether the adjustment of my target levers were effective at improving the user experience</li>
+                    <li>Broadly the levers I chose were:
+                        <ul>
+                            <li>Using primary colors</li>
+                            <li>Using Higher contrast font colours</li>
+                            <li>Using font weights to demarcate categories of information</li>
+                        </ul>
+                    </li>
+                </ul>
+        
+            <h2>2. Initial website problems</h2>
+            <div class="text_block">
+                <img src="/Users/joshualim/Documents/CS1300/ab_testing/abtest_images/original_site.png" alt="Screenshot of the original booking website"> 
+                <div class="text">
+                    <ul>
+                        <li>The website has a low contrast color scheme making text hard to read</li>
+                        <li>The buttons on the right: "See Appointment" and "Schedule Appointment" are not distinguisable </li>
+                        <li>The date section and details section are not clearly demarcated</li>
+                    </ul>
+                </div>
+            </div>
+
+            <h2>3. Changes</h2>
+            <div class="text_block">
+                <img src="/Users/joshualim/Documents/CS1300/ab_testing/abtest_images/updated_site.png" alt="Screenshot of the updated booking website">
+                <div class="text">
+                    <ul>
+                        <li>Dark blue was used to demarcate the buttons using contrast</li>
+                        <li>The date section color was changed to blue to show clear separation from details </li>
+                        <li>The Details section font color was changed to black from grey for greater contrast</li>
+                    </ul>
+                </div>
+            </div>
+
+        <h2>4. A/B Testing Metrics and Calculations </h2>
+        <div class="section">
+            <h3>4.1 Misclick Rate</h3>
+            <div class="image-container">
+                <div class="block">
+                    <img src="/Users/joshualim/Documents/CS1300/ab_testing/abtest_images/misclick_rate_stat.png" alt="table of statistical calculations for misclick rate">
+                    <div class="text">
+                        <h4><b>Null Hypothesis:</b> The misclick rate of the original website is the same as the updated website</h4>
+                        <ul><li><b>Prediction & Rationale: </b> Reject as original website has poor contrast making users click the first seemlingly correction option which based on the appointment type</li></ul>
+                        <h4><b>Alternative Hypothesis:</b> The misclick rate of the original website is different than that of the updated website</h4>
+                        <ul><li><b>Prediction & Rationale: </b> The contrast is high for name descriptions enabling users to focus on accuracy as opposed to deciphering</li></ul>
+                    </div>
+                </div>
+                <div class="text2">
+                    <h4><b>Test chosen:</b> Chi-squared test</h4>
+                        <ul><li><b>Rationale: </b> The  the outcome I was testing for was categorical (True/False)</li></ul>
+                    <h4><b>Significance:</b> We find a statistically significant difference in the rate of misclicks for version A and version B, as p<=0.05(0.00056). Since the number of times a misclick was recorded on Version A was 9/16 which is higher than Version B (0/15), we see evidence that less users misclick on version B than A.</h4>
+                    <h4><b>description of key values:</b>
+                    <ul>
+                        <li><b>df:</b> there is only 1 logically independent variable which is a boolean of whether a misclick occurred</li>
+                        <li><b>chi^2:</b> 11 in the context of this test with a p of 0.00056 shows a significant difference between observed and expected values</li>
+                    </ul>
+                    <h4><b>Conclude:</b> We reject the null hypothesis</h4>
+                </div>
+                
+            </div>
+
+            <h3>4.2 Time spent on page</h3>
+            <div class="image-container">
+                <div class="block">
+                    <img src="/Users/joshualim/Documents/CS1300/ab_testing/abtest_images/time_on_page_stat.png" alt="table of statistical calculations for time on page statistic">
+                    <div class="text">
+                        <h4><b>Null Hypothesis:</b> The average time spent the original page is lower than the updated website</h4>
+                        <ul><li><b>Prediction & Rationale: </b> Reject as users spend more time trying to read text than select and option</li></ul>
+                        <h4><b>Alternative Hypothesis:</b> The average time spent the original page is higher than that of the updated website</h4>
+                        <ul><li><b>Prediction & Rationale: </b> Users can clearly understand text making it easier to select an option</li></ul>
+                    </div>
+                </div>
+                <div class="text2">
+                    <h4><b>Test chosen:</b> two t-test</h4>
+                        <ul><li><b>Rationale: </b> Data was continous and we were testing whether there was a significant difference in average time spent on the website in both directions, not just one.</li></ul>
+                    <h4><b>Significance:</b> We find a statistically significant difference in the rate of misclicks for version A and version B, as p<=0.05(0.00035). Since the average time  recorded on Version A (29411ms) is higher than Version B (8173ms), we see evidence that users spend less time on version B than A.</h4>
+                    <h4><b>description of key values:</b>
+                    <ul>
+                        <li><b>t-score:</b>  negative t-score means that Sample B average is lower than Sample A</li>
+                        <li><b>chi^2:</b> 11 in the context of this test with a p of 0.00056 shows a significant difference between observed and expected values</li>
+                    </ul>
+                    <h4><b>Conclude:</b> We reject the null hypothesis and find statistically significant evidence that the alternative hypothesis is true that the average time on page for Version A is higher than Version B</h4>
+                </div>
+                
+            </div>
+            <h3>4.3 Time till the first click</h3>
+            <div class="image-container">
+                <div class="block">
+                    <img src="/Users/joshualim/Documents/CS1300/ab_testing/abtest_images/time_to_first_click_stat.png" alt="table of statistical calculations for time on page statistic">
+                    <div class="text">
+                        <h4><b>Null Hypothesis:</b> The average time to first click of the original page is lower than the updated website</h4>
+                        <ul><li><b>Prediction & Rationale: </b> Reject as users spend more time trying to understand what information the text provides and what the organization of it is</li></ul>
+                        <h4><b>Alternative Hypothesis:</b> The average time to first click of the original page is higher than that of the updated website</h4>
+                        <ul><li><b>Prediction & Rationale: </b> Users can clearly make out how the text hierarchy signals information and make decision faster</li></ul>
+                    </div>
+                </div>
+                <div class="text2">
+                    <h4><b>Test chosen:</b> two t-test</h4>
+                        <ul><li><b>Rationale: </b> Data was continous and we were testing whether there was a significant difference in average time to first click in both directions, not just one.</li></ul>
+                    <h4><b>Significance:</b>  We find a statistically significant difference in the rate of misclicks for version A and version B, as p<=0.05(0.00166). Since the average time to first click recorded on Version A (10452ms) is higher than Version B (5234ms), we see evidence that users spend less time till their first click on version B than A.</h4>
+                    <h4><b>description of key values:</b>
+                    <ul>
+                        <li><b>t-score:</b>  negative t-score means that Sample B average is lower than Sample A </li>
+                    </ul>
+                    <h4><b>Conclude:</b> We reject the null hypothesis and find statistically significant evidence that the alternative hypothesis is true that the average time to first click for Version A is higher than Version B </h4>
+                </div>
+            </div>
+
+        </div>
+
+        <h2>5. Final Website </h2>
+    
+            <a href="https://joshdunz.github.io/skincarisma_redesign/#" class="button-link">
+                <img src="Portfolio_images/new-website.png" alt="Screenshot of the redesigned website"> SkinCarisma's New Website
+            </a>
+
+
+    </div>
+
+    
+
+</body>
+
+</html>
