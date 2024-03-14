@@ -9,7 +9,7 @@ h2{
 }
 h3{
     font-family: 'DM Sans', sans-serif;
-    font-weight:bolder;
+    font-weight:bold;
     margin: 10px;
     font-size: 1.1em;
 }
@@ -102,6 +102,6 @@ ul{
 }
 
 .image-container img {
-    width: 300px; /* Adjust the width of the images */
+    width: 400px; /* Adjust the width of the images */
     border: solid 1px black;/* Maintain aspect ratio */
 }

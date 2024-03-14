@@ -20,7 +20,7 @@
 
         <div class="project-body">
             <h2>1. About </h2>
-            <h4>The task of the project was to conduct A/B Test on a given webpage and another webpage with suggested improvements :</h4>
+            <h3>The task of the project was to conduct A/B Test on a given webpage (Version A) and another webpage with suggested improvements (Version B).</h3>
                 <ul>
                     <li>I sought to prove that my editted page with higher contrast increased accuracy and cut down time spent on the booking site</li>
                     <li>The testing helped me determine whether the adjustment of my target levers were effective at improving the user experience</li>
@@ -32,10 +32,16 @@
                         </ul>
                     </li>
                 </ul>
+                <h3>I used 3 metrics that were measured in the backend when the test subjects interacted with the webpage:</h3>
+                    <ul>
+                        <li>Time to first click(milliseconds)</li>
+                        <li>Time spent on Page (milliseconds)</li>
+                        <li>Whether a misclick occured (True/False)</li>
+                    <ul>
         
-            <h2>2. Initial website problems</h2>
+            <h2>2. Initial website problems (Version A)</h2>
             <div class="text_block">
-                <img src="ab-testing/abtest_images/original_site.png" alt="Screenshot of the original booking website"> 
+                <img src="abtest_images/original_site.png" alt="Screenshot of the original booking website"> 
                 <div class="text">
                     <ul>
                         <li>The website has a low contrast color scheme making text hard to read</li>
@@ -45,9 +51,9 @@
                 </div>
             </div>
 
-            <h2>3. Changes</h2>
+            <h2>3. Changes (Version B)</h2>
             <div class="text_block">
-                <img src="ab-testing/abtest_images/updated_site.png" alt="Screenshot of the updated booking website">
+                <img src="abtest_images/updated_site.png" alt="Screenshot of the updated booking website">
                 <div class="text">
                     <ul>
                         <li>Dark blue was used to demarcate the buttons using contrast</li>
@@ -62,7 +68,8 @@
             <h3>4.1 Misclick Rate</h3>
             <div class="image-container">
                 <div class="block">
-                    <img src="ab-testing/abtest_images/misclick_rate_stat.png" alt="table of statistical calculations for misclick rate">
+                    <img src="abtest_images/Misclick_number.png" alt="table of statistical calculations for misclick rate">
+                    <img src="abtest_images/misclick_rate_stat.png" alt="table of statistical calculations for misclick rate">
                     <div class="text">
                         <h4><b>Null Hypothesis:</b> The misclick rate of the original website (A) is the same as the updated website (B)</h4>
                         <ul><li><b>Prediction & Rationale: </b> Reject as original website has poor contrast making users click the first seemlingly correction option which based on the appointment type</li></ul>
@@ -84,10 +91,10 @@
                 
             </div>
 
-            <h3>4.2 Time spent on page</h3>
+            <h2>4.2 Time spent on page</h2>
             <div class="image-container">
                 <div class="block">
-                    <img src="ab-testing/abtest_images/time_on_page_stat.png" alt="table of statistical calculations for time on page statistic">
+                    <img src="abtest_images/time_on_page_stat.png" alt="table of statistical calculations for time on page statistic">
                     <div class="text">
                         <h4><b>Null Hypothesis:</b> The average time spent the original page (A) is lower than the updated website (B)</h4>
                         <ul><li><b>Prediction & Rationale: </b> Reject as users spend more time trying to read text than select and option</li></ul>
@@ -111,7 +118,7 @@
             <h3>4.3 Time till the first click</h3>
             <div class="image-container">
                 <div class="block">
-                    <img src="ab-testing/abtest_images/time_to_first_click_stat.png" alt="table of statistical calculations for time to first click statistic">
+                    <img src="abtest_images/time_to_first_click_stat.png" alt="table of statistical calculations for time to first click statistic">
                     <div class="text">
                         <h4><b>Null Hypothesis:</b> The average time to first click of the original page (A) is lower than the updated website(B)</h4>
                         <ul><li><b>Prediction & Rationale: </b> Reject as users spend more time trying to understand what information the text provides and what the organization of it is</li></ul>
@@ -141,11 +148,11 @@
         </ul>
         <h4>We see that on average the time to first click is less in version B(Updated site - 5234ms) than in version A(Original site-10452ms). </h4>
         <ul>
-            <li> Version B also has a significantly larger variance (6379378) which is a measure of the spread of data values from the mean as compared to the original site (27388063). This signals that the average value of the time till first click for the update site is more representative of the data than in the original site meaning that users are more likely to make decisions more quickly and act on them on the updated page than the original </li>
+            <li> Version B also has a significantly larger variance (6379378) than the original site (27388063). This signals that the individual results of the time till first click were closer to the average value for the updated site than in the original site meaning that users are more likely to make decisions more quickly and act on them on the updated page than the original </li>
         </ul>
         <h4>We see that expected value of the rate of misclicks is lower in the original (4.5) than the updated(11.5) </h4>
         <ul>
-            <li> That meaning that the misclicks occur far more frequently in the original than the updated and users are able to be more accurate with their actions in the later </li>
+            <li> That means that the misclicks occur far more frequently in the original than the updated and users are able to be more accurate with their actions in the later </li>
         </ul>
 
 
