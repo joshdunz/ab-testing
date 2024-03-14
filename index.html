@@ -64,20 +64,20 @@
                 <div class="block">
                     <img src="ab-testing/abtest_images/misclick_rate_stat.png" alt="table of statistical calculations for misclick rate">
                     <div class="text">
-                        <h4><b>Null Hypothesis:</b> The misclick rate of the original website is the same as the updated website</h4>
+                        <h4><b>Null Hypothesis:</b> The misclick rate of the original website (A) is the same as the updated website (B)</h4>
                         <ul><li><b>Prediction & Rationale: </b> Reject as original website has poor contrast making users click the first seemlingly correction option which based on the appointment type</li></ul>
-                        <h4><b>Alternative Hypothesis:</b> The misclick rate of the original website is different than that of the updated website</h4>
+                        <h4><b>Alternative Hypothesis:</b> The misclick rate of the original website (A) is different than that of the updated website(B)</h4>
                         <ul><li><b>Prediction & Rationale: </b> The contrast is high for name descriptions enabling users to focus on accuracy as opposed to deciphering</li></ul>
                     </div>
                 </div>
                 <div class="text2">
                     <h4><b>Test chosen:</b> Chi-squared test</h4>
                         <ul><li><b>Rationale: </b> The  the outcome I was testing for was categorical (True/False)</li></ul>
-                    <h4><b>Significance:</b> We find a statistically significant difference in the rate of misclicks for version A and version B, as p<=0.05(0.00056). Since the number of times a misclick was recorded on Version A was 9/16 which is higher than Version B (0/15), we see evidence that less users misclick on version B than A.</h4>
+                    <h4><b>Significance:</b> We find a statistically significant difference in the rate of misclicks for version A and version B, as p<=0.05(0.00040). Since the number of times a misclick was recorded on Version A was 9/16 which is higher than Version B (0/16), we see evidence that less users misclick on version B than A.</h4>
                     <h4><b>description of key values:</b>
                     <ul>
                         <li><b>df:</b> there is only 1 logically independent variable which is a boolean of whether a misclick occurred</li>
-                        <li><b>chi^2:</b> 11 in the context of this test with a p of 0.00056 shows a significant difference between observed and expected values</li>
+                        <li><b>chi^2:</b> 12.5 in the context of this test with a p of 0.00040 shows a significant difference between observed and expected values</li>
                     </ul>
                     <h4><b>Conclude:</b> We reject the null hypothesis</h4>
                 </div>
@@ -89,20 +89,20 @@
                 <div class="block">
                     <img src="ab-testing/abtest_images/time_on_page_stat.png" alt="table of statistical calculations for time on page statistic">
                     <div class="text">
-                        <h4><b>Null Hypothesis:</b> The average time spent the original page is lower than the updated website</h4>
+                        <h4><b>Null Hypothesis:</b> The average time spent the original page (A) is lower than the updated website (B)</h4>
                         <ul><li><b>Prediction & Rationale: </b> Reject as users spend more time trying to read text than select and option</li></ul>
-                        <h4><b>Alternative Hypothesis:</b> The average time spent the original page is higher than that of the updated website</h4>
-                        <ul><li><b>Prediction & Rationale: </b> Users can clearly understand text making it easier to select an option</li></ul>
+                        <h4><b>Alternative Hypothesis:</b> The average time spent the original page (A) is higher than that of the updated website (B)</h4>
+                        <ul><li><b>Prediction & Rationale: </b> Users can clearly understand text making it easier and faster to complete the experience</li></ul>
                     </div>
                 </div>
                 <div class="text2">
-                    <h4><b>Test chosen:</b> two t-test</h4>
-                        <ul><li><b>Rationale: </b> Data was continous and we were testing whether there was a significant difference in average time spent on the website in both directions, not just one.</li></ul>
-                    <h4><b>Significance:</b> We find a statistically significant difference in the rate of misclicks for version A and version B, as p<=0.05(0.00035). Since the average time  recorded on Version A (29411ms) is higher than Version B (8173ms), we see evidence that users spend less time on version B than A.</h4>
+                    <h4><b>Test chosen:</b> two-tailed t-test</h4>
+                        <ul><li><b>Rationale: </b> Data was continous and I was testing whether there was a significant difference in average time spent on the website accounting for the case where the original could be lower than the updated version and vice versa.</li></ul>
+                    <h4><b>Significance:</b> We find a statistically significant difference in the time spent on page for version A and version B, as p<=0.05(0.00035). Since the average time recorded on Version A (29411ms) is higher than Version B (8173ms), we see evidence that users spend less time on version B than A.</h4>
                     <h4><b>description of key values:</b>
                     <ul>
                         <li><b>t-score:</b>  negative t-score means that Sample B average is lower than Sample A</li>
-                        <li><b>chi^2:</b> 11 in the context of this test with a p of 0.00056 shows a significant difference between observed and expected values</li>
+                        <!-- <li><b>chi^2:</b> 11 in the context of this test with a p of 0.00056 shows a significant difference between observed and expected values</li> -->
                     </ul>
                     <h4><b>Conclude:</b> We reject the null hypothesis and find statistically significant evidence that the alternative hypothesis is true that the average time on page for Version A is higher than Version B</h4>
                 </div>
@@ -111,18 +111,18 @@
             <h3>4.3 Time till the first click</h3>
             <div class="image-container">
                 <div class="block">
-                    <img src="ab-testing/abtest_images/time_to_first_click_stat.png" alt="table of statistical calculations for time on page statistic">
+                    <img src="ab-testing/abtest_images/time_to_first_click_stat.png" alt="table of statistical calculations for time to first click statistic">
                     <div class="text">
-                        <h4><b>Null Hypothesis:</b> The average time to first click of the original page is lower than the updated website</h4>
+                        <h4><b>Null Hypothesis:</b> The average time to first click of the original page (A) is lower than the updated website(B)</h4>
                         <ul><li><b>Prediction & Rationale: </b> Reject as users spend more time trying to understand what information the text provides and what the organization of it is</li></ul>
-                        <h4><b>Alternative Hypothesis:</b> The average time to first click of the original page is higher than that of the updated website</h4>
-                        <ul><li><b>Prediction & Rationale: </b> Users can clearly make out how the text hierarchy signals information and make decision faster</li></ul>
+                        <h4><b>Alternative Hypothesis:</b> The average time to first click of the original page (A)is higher than that of the updated website(B)</h4>
+                        <ul><li><b>Prediction & Rationale: </b> Users can clearly make out how the text hierarchy signals information categories, make decision and act faster</li></ul>
                     </div>
                 </div>
                 <div class="text2">
-                    <h4><b>Test chosen:</b> two t-test</h4>
-                        <ul><li><b>Rationale: </b> Data was continous and we were testing whether there was a significant difference in average time to first click in both directions, not just one.</li></ul>
-                    <h4><b>Significance:</b>  We find a statistically significant difference in the rate of misclicks for version A and version B, as p<=0.05(0.00166). Since the average time to first click recorded on Version A (10452ms) is higher than Version B (5234ms), we see evidence that users spend less time till their first click on version B than A.</h4>
+                    <h4><b>Test chosen:</b> two-tailed t-test</h4>
+                        <ul><li><b>Rationale: </b> Data was continous and we were testing whether there was a significant difference in average time to first click website accounting for the case where the original could be lower than the updated version and vice versa..</li></ul>
+                    <h4><b>Significance:</b>  We find a statistically significant difference in the time to first click for version A and version B, as p<=0.05(0.00166). Since the average time to first click recorded on Version A (10452ms) is higher than Version B (5234ms), we see evidence that users spend less time till their first click on version B than A.</h4>
                     <h4><b>description of key values:</b>
                     <ul>
                         <li><b>t-score:</b>  negative t-score means that Sample B average is lower than Sample A </li>
@@ -133,11 +133,20 @@
 
         </div>
 
-        <h2>5. Final Website </h2>
-    
-            <a href="https://joshdunz.github.io/skincarisma_redesign/#" class="button-link">
-                <img src="Portfolio_images/new-website.png" alt="Screenshot of the redesigned website"> SkinCarisma's New Website
-            </a>
+        <h2>5. Summary Original VS Updated Site </h2>
+        <h3>It is likely that the updated site is better than the original</h3>
+        <h4>We see that on average the time on page spent is less in version B(Updated site - 8173 ms) than in version A(Original site-29411ms). </h4>
+        <ul>
+            <li> Version B also has a significantly larger variance (5974262) which is a measure of the spread of data values from the mean as compared to the original site (341951899). This signals that the average value of the time on page for the update site is more representative of the data than in the original site meaning that users are more likely to have more consistently shorter web experiences on the updated page </li>
+        </ul>
+        <h4>We see that on average the time to first click is less in version B(Updated site - 5234ms) than in version A(Original site-10452ms). </h4>
+        <ul>
+            <li> Version B also has a significantly larger variance (6379378) which is a measure of the spread of data values from the mean as compared to the original site (27388063). This signals that the average value of the time till first click for the update site is more representative of the data than in the original site meaning that users are more likely to make decisions more quickly and act on them on the updated page than the original </li>
+        </ul>
+        <h4>We see that expected value of the rate of misclicks is lower in the original (4.5) than the updated(11.5) </h4>
+        <ul>
+            <li> That meaning that the misclicks occur far more frequently in the original than the updated and users are able to be more accurate with their actions in the later </li>
+        </ul>
 
 
     </div>
